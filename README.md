@@ -46,7 +46,7 @@ python run.py --help
 Run the following code:
 ```bash
 # test q_mamba 
-CUDA_VISIBLE_DEVICES=0 python run.py --test --algorithm_id 0 --load_path '/home/data1/ZejunWangRemote/pytorch-lightning-template/Mamba-DAC/model/trajectory_set_0_Unit/20241103T160947/epoch_start.pth' 
+CUDA_VISIBLE_DEVICES=0 python run.py --test --algorithm_id 0 --load_path [MODEL_PATH] 
 
 ```
 

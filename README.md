@@ -13,11 +13,11 @@ First, create the q_mamba environment.
 conda create --name q_mamba python=3.10
 conda activate q_mamba
 ```
+Then install Pytorch with version 1.12+ and CUDA 11.6+ (see https://pytorch.org/ for more details). The cuda-toolkit is also required ``conda install nvidia::cuda-toolkit=12.1``.
 
-Second, install the mamba-ssm using ``pip install mamba-ssm`` (see https://github.com/state-spaces/mamba.git for more details).
+Next, install the mamba-ssm using ``pip install mamba-ssm`` (see https://github.com/state-spaces/mamba.git for more details).
 
-
-Third, install the other necessary libraries.
+Finally, install the other necessary libraries.
 ```bash
 pip install -r requirements.txt
 ```

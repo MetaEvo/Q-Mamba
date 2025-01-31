@@ -55,16 +55,16 @@ mk_dir(log_dir)
 mk_dir(model_save_dir)
 logger = SummaryWriter(log_dir)
 
-with open(f'trajectory_files/trajectories_set_alg0/trajectory_set_0_CfgX.pkl', 'rb') as f:
+with open(f'trajectory_files/trajectory_set_0_CfgX.pkl', 'rb') as f:
     trajectories_cfgx = pickle.load(f)
-with open(f'trajectory_files/trajectories_set_alg0/trajectory_set_0_Rand.pkl', 'rb') as f:
+with open(f'trajectory_files/trajectory_set_0_Rand.pkl', 'rb') as f:
     trajectories_rand = pickle.load(f)
 trajectories_unit = []
 
 for i in range(16):
     trajectories_unit += trajectories_cfgx[i * 700:int(i* 700 + 700*rate)]
     trajectories_unit += trajectories_rand[i * 700:int(i* 700 + 700*(1 - rate))]
-traj_dataset = My_Dataset('./trajectory_files/trajectories_set_alg0/trajectory_set_0_Unit.pkl', device=device)
+traj_dataset = My_Dataset('./trajectory_files/trajectory_set_0_Unit.pkl', device=device)
 traj_dataset.data = trajectories_unit
 
 batch_size = 64

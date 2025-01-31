@@ -51,37 +51,6 @@ python run.py --train --trajectory_file_path './trajectory_files/trajectory_set_
 
 ```
 
-To reproduce the experiment in Section 5.4, Table 2 in the paper, you could run the training with parameter _lambda_ = 0, 1 or 10 and _beta_ = 1 or 10 to change the two hyper-parameters. For example:
-
-```bash
-
-python run.py --train --trajectory_file_path './trajectory_files/trajectory_set_0_Unit.pkl' --has_conservative_reg_loss --lambda=1 --beta=1
-
-```
-
-For the experiment on action bins (Appendix E.1), run the following command:
-```bash
-
-python run.py --train --trajectory_file_path './trajectory_files/trajectory_set_0_Unit.pkl' --has_conservative_reg_loss --action_bins 16 --actions_dim 5
-
-```
-with different _action_bins_ = 16, 32, 64, 128, 256, or 512 and _actions_dim_ = 5, 6, 7, 8, 9 or 10 accordingly.
-
-For the E&E data ratio experiment, modified the ``rate'' parameter in line 37 to the value in (0, 0.25, 0.5, 0.75, 1) and assign the data path in line 58. line 60, then run the training command:
-
-```bash
-python EE_data_ratio.py
-
-```
-
-For more detailed configuration options, please refer to the argparse help. 
-
-```bash
-
-python run.py --help
-
-```
-
 Taking the training on _Alg0_ as an example, the models in the training is saved at ./model/trajectory_set_0_Unit/YYMMDDTHHmmSS/ (where YYMMDDTHHmmSS is the time stamp of the run) and the tensorboard log is stored at ./log/trajectory_set_0_Unit/YYMMDDTHHmmSS 
 
 ### Test

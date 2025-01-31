@@ -51,12 +51,3 @@ CUDA_VISIBLE_DEVICES=0 python run.py --test --algorithm_id 0 --load_path [MODEL_
 ```
 
 
-
-## Citation
-Please kindly cite our paper if you find it's helpful in your work.
-
-``` bibtex
-
-```
-
-## Ackonwledge

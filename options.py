@@ -17,7 +17,7 @@ def get_options(args=None):
     parser.add_argument("--shuffle", action="store_true", default = False, help="Shuffle the dataset")
     parser.add_argument("--resume",type=str, default = None, help="a txt or json, to resume training")
     parser.add_argument("--lr", type=float, default=5e-3)
-    parser.add_argument("--alpha", type=float, default=1.0)
+    parser.add_argument("--lamda", type=float, default=1.0)
     parser.add_argument("--beta", type=float, default=10.0)
     
     # Q-Mamba options

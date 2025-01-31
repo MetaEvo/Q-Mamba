@@ -18,7 +18,7 @@ Second, install the mamba-ssm following the instructions on: https://github.com/
 
 Third, install the other necessary libraries.
 ```bash
-pip install -r requirments.txt
+pip install -r requirements.txt
 ```
 
 ### Train
@@ -49,6 +49,8 @@ For more detailed configuration options, please refer to the argparse help.
 python run.py --help
 
 ```
+
+
 
 ### Test
 Run the following code:

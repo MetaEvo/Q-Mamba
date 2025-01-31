@@ -67,3 +67,4 @@ For example, we have a pre-trained Q-Mamba model in ``./model/qmamba.pth``, whic
 python run.py --test --algorithm_id 0 --load_path ./model/qmamba.pth
 
 ```
+The reward results are stored in ``./log/test/q_mamba/YYMMDDTHHmmSS/test_rewards.pkl`` where YYMMDDTHHmmSS is the time stamp of the test. 

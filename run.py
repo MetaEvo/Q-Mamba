@@ -382,7 +382,7 @@ def test(cfg):
         rewards = []
         costs = []
         start_time = time.time()
-        for i in range(1):
+        for i in range(19):
             env.seed(i + 1)
             reward, cost = q_mamba_for_test.rollout_trajectory(env,500,need_return_cost=True)
             # print(f"algorithm:{j}, question: {k}, reward: {reward}, cost: {cost}")

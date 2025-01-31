@@ -48,36 +48,36 @@ def append_args(args_2, log_path):
 
 '''training'''
 
-def test_for_one_epoch(q_model, envs, algorithm_num, eval_num=1):
+# def test_for_one_epoch(q_model, envs, algorithm_num, eval_num=1):
     
-    q_model.eval()
-    question_rewards = {}
-    # pbar = tqdm(total=8*19)
-    j = algorithm_num
-    for k in range(8):
-        env = envs[j * 8 + k]
-        rewards = []
-        costs = []
-        start_time = time.time()
-        for i in range(eval_num):
-            env.seed(i + 1)
-            reward, cost = q_model.rollout_trajectory(env, 500, need_return_cost=True)
-            rewards.append(reward)
-            costs.append(cost)
-            # pbar.update()
-        mean_reward = np.mean(rewards)
-        std_reward = np.std(rewards)
-        # var_reward = np.var(rewards)
-        mean_cost = np.mean(costs)
-        std_cost = np.std(costs)
+#     q_model.eval()
+#     question_rewards = {}
+#     # pbar = tqdm(total=8*19)
+#     j = algorithm_num
+#     for k in range(8):
+#         env = envs[j * 8 + k]
+#         rewards = []
+#         costs = []
+#         start_time = time.time()
+#         for i in range(eval_num):
+#             env.seed(i + 1)
+#             reward, cost = q_model.rollout_trajectory(env, 500, need_return_cost=True)
+#             rewards.append(reward)
+#             costs.append(cost)
+#             # pbar.update()
+#         mean_reward = np.mean(rewards)
+#         std_reward = np.std(rewards)
+#         # var_reward = np.var(rewards)
+#         mean_cost = np.mean(costs)
+#         std_cost = np.std(costs)
         
-        # dict_reward = {'mean': mean_reward, 'std': std_reward, 'var': var_reward}
-        mean_cost_time = (time.time() - start_time) / eval_num
-        start_time = time.time()
+#         # dict_reward = {'mean': mean_reward, 'std': std_reward, 'var': var_reward}
+#         mean_cost_time = (time.time() - start_time) / eval_num
+#         start_time = time.time()
         
-        dict_reward_cost = {'rewards': rewards, 'costs': costs, 'cost_time': mean_cost_time}
-        question_rewards["quesition_{}".format(k)] = dict_reward_cost
-    return question_rewards
+#         dict_reward_cost = {'rewards': rewards, 'costs': costs, 'cost_time': mean_cost_time}
+#         question_rewards["quesition_{}".format(k)] = dict_reward_cost
+#     return question_rewards
         
         # print(f"algorithm:{j}, question: {k}, mean reward: {mean_reward}, std reward: {std_reward}, mean cost: {mean_cost}, std cost: {std_cost}, cost time: {mean_cost_time}")
    
@@ -97,8 +97,8 @@ def train(cfg):
     
     print(f"------- this algorithm is start training: {cfg.task_id} -------")
 
-    cfg.log_path = cfg.log_path + "/"+ cfg.task_name + "/" +  cfg.time_stamp + "/"
-    cfg.model_dir = cfg.model_dir + "/"+ cfg.task_name + "/" + cfg.time_stamp + "/"
+    cfg.log_path = cfg.log_path + "/"+ cfg.task_name + "/" +  cfg.log_name + "/"
+    cfg.model_dir = cfg.model_dir + "/"+ cfg.task_name + "/" + cfg.log_name + "/"
     trajectory_file_path = cfg.trajectory_file_path
     mk_dir(cfg.log_path)
     mk_dir(cfg.model_dir)
@@ -160,20 +160,20 @@ def train(cfg):
         
         logger.add_scalar('total_loss',loss,epoch)
         
-        pbar.update()
-        epoch_test_info = test_for_one_epoch(q_model, test_envs, cfg.task_id, eval_num=1)
-        epoch_info[epoch] = epoch_test_info
-        mean_reward = np.mean([np.mean(v['rewards']) for v in epoch_test_info.values()]).item()
-        mean_cost = np.mean([np.mean(v['costs']) for v in epoch_test_info.values()]).item()
-        # print(f"epoch: {epoch}, mean_reward: {mean_reward}, mean_cost: {mean_cost}")
-        logger.add_scalar('test_mean_reward', mean_reward, epoch)
-        logger.add_scalar('test_mean_cost', mean_cost, epoch)
+        # pbar.update()
+        # epoch_test_info = test_for_one_epoch(q_model, test_envs, cfg.task_id, eval_num=1)
+        # epoch_info[epoch] = epoch_test_info
+        # mean_reward = np.mean([np.mean(v['rewards']) for v in epoch_test_info.values()]).item()
+        # mean_cost = np.mean([np.mean(v['costs']) for v in epoch_test_info.values()]).item()
+        # # print(f"epoch: {epoch}, mean_reward: {mean_reward}, mean_cost: {mean_cost}")
+        # logger.add_scalar('test_mean_reward', mean_reward, epoch)
+        # logger.add_scalar('test_mean_cost', mean_cost, epoch)
         
-        test_key = epoch_test_info.keys()
-        test_rewards = [np.mean(v['rewards']) for v in epoch_test_info.values()]
-        test_costs = [np.mean(v['costs']) for v in epoch_test_info.values()]
-        logger.add_scalars('test_rewards', dict(zip(test_key,test_rewards)), epoch)
-        logger.add_scalars('test_costs', dict(zip(test_key,test_costs)), epoch)
+        # test_key = epoch_test_info.keys()
+        # test_rewards = [np.mean(v['rewards']) for v in epoch_test_info.values()]
+        # test_costs = [np.mean(v['costs']) for v in epoch_test_info.values()]
+        # logger.add_scalars('test_rewards', dict(zip(test_key,test_rewards)), epoch)
+        # logger.add_scalars('test_costs', dict(zip(test_key,test_costs)), epoch)
         
         
         

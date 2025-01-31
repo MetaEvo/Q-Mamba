@@ -19,8 +19,8 @@ pip install -r requirments.txt
 To quickly start training, 
 firstly, download the training trajectories from [here](https://github.com/GMC-DRL/Q-Mamba/tree/main). The directory could be set like this basic structure:
 ```bash                       
-./trajectory_files/trajectories_set_alg0/trajectory_set_0_CfgX.pkl                       
-./trajectory_files/trajectories_set_alg1/trajectory_set_1_CfgX.pkl                       
+./trajectory_files/trajectories_set_alg0/trajectory_set_0_Unit.pkl                       
+./trajectory_files/trajectories_set_alg1/trajectory_set_1_Unit.pkl                       
 ...
 ```
 Second, run the following code.

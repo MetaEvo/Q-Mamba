@@ -40,6 +40,7 @@ CUDA_VISIBLE_DEVICES=0 python run.py --train --trajectory_file_path './trajector
 CUDA_VISIBLE_DEVICES=0 python run.py --train --trajectory_file_path './trajectory_files/trajectory_set_0_Unit.pkl' 
 
 ```
+You can change key variables such as `--lamda`, `--beta` to reproduce our experiment.
 
 
 For more detailed configuration options, please refer to the argparse help. 

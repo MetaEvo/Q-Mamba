@@ -145,12 +145,12 @@ def train(cfg):
         for states, actions, rewards in dataloader:
             batch_traj = {'state': states, 'action': actions, 'reward': rewards}
             if has_conservative_reg_loss:
-                total_loss, td_loss_, cql_loss_ = q_model.learn_from_trajectory(batch_traj, has_conservative_reg_loss = has_conservative_reg_loss,beta = cfg.beta,alpha = cfg.alpha)
+                total_loss, td_loss_, cql_loss_ = q_model.learn_from_trajectory(batch_traj, has_conservative_reg_loss = has_conservative_reg_loss,beta = cfg.beta,alpha = cfg.lamda)
                 loss += total_loss
                 td_loss += td_loss_
                 cql_loss += cql_loss_
             else:
-                loss += q_model.learn_from_trajectory(batch_traj, has_conservative_reg_loss = has_conservative_reg_loss,beta = cfg.beta,alpha = cfg.alpha)
+                loss += q_model.learn_from_trajectory(batch_traj, has_conservative_reg_loss = has_conservative_reg_loss,beta = cfg.beta,alpha = cfg.lamda)
         if has_conservative_reg_loss:
             logger.add_scalar('td_loss',td_loss,epoch)
             logger.add_scalar('conservative_reg_loss',cql_loss,epoch)

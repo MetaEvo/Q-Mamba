@@ -8,7 +8,7 @@ Code of paper: Meta-Black-Box-Optimization through Offline Q-function Learning.
 ## Preparations
 
 ### Create and activate conda environment
-First,
+First, create the q_mamba environment.
 ```bash
 conda create --name q_mamba python=3.10
 conda activate q_mamba
@@ -16,7 +16,7 @@ conda activate q_mamba
 
 Second, install the mamba-ssm following the instructions on: https://github.com/state-spaces/mamba.git.
 
-Third,
+Third, install the other necessary libraries.
 ```bash
 pip install -r requirments.txt
 ```

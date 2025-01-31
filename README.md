@@ -61,3 +61,9 @@ python run.py --test --algorithm_id 0 --load_path [MODEL_PATH]
 
 ```
 
+For example, we have a pre-trained Q-Mamba model in ``./model/qmamba.pth``, which is trained with default settings in the paper on _Alg0_, its testing command is  
+```bash
+# test q_mamba 
+python run.py --test --algorithm_id 0 --load_path ./model/qmamba.pth
+
+```

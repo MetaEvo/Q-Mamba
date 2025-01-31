@@ -61,11 +61,3 @@ python run.py --test --algorithm_id 0 --load_path [MODEL_PATH]
 
 ```
 
-
-### Log
-Run the following code:
-```bash
-
-tensorboard --logdir=./log/
-
-```

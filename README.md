@@ -20,21 +20,18 @@ To quickly start training,
 firstly, download the training trajectories from [here](https://github.com/GMC-DRL/Q-Mamba/tree/main). The directory could be set like this basic structure:
 ```bash
 ├── /trajectory_files/
-│  ├── /trajectories_set_alg0/
-│  │  ├── trajectory_set_0_Unit.pkl   
-│  ├── /trajectories_set_alg1/
-│  │  ├── trajectory_set_1_Unit.pkl   
-│  ├── /trajectories_set_alg2/
-│  │  ├── trajectory_set_2_Unit.pkl                     
+│  ├── trajectory_set_0_Unit.pkl   
+│  ├── trajectory_set_1_Unit.pkl   
+│  ├── trajectory_set_2_Unit.pkl                     
 ```
 Second, run the following code.
 
 ```bash
 # train q_mamba with conservative_reg_loss 
-CUDA_VISIBLE_DEVICES=0 python run.py --train --trajectory_file_path './trajectory_files/trajectories_set_alg0/trajectory_set_0_Unit.pkl' --has_conservative_reg_loss 
+CUDA_VISIBLE_DEVICES=0 python run.py --train --trajectory_file_path './trajectory_files/trajectory_set_0_Unit.pkl' --has_conservative_reg_loss 
 
 # train q_mamba without conservative_reg_loss
-CUDA_VISIBLE_DEVICES=0 python run.py --train --trajectory_file_path './trajectory_files/trajectories_set_alg0/trajectory_set_0_Unit.pkl' 
+CUDA_VISIBLE_DEVICES=0 python run.py --train --trajectory_file_path './trajectory_files/trajectory_set_0_Unit.pkl' 
 
 ```
 

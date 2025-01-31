@@ -21,7 +21,7 @@ firstly, download the training trajectories from [here](https://github.com/GMC-D
 ```bash                       
 ./trajectory_files/trajectories_set_alg0/trajectory_set_0_Unit.pkl                       
 ./trajectory_files/trajectories_set_alg1/trajectory_set_1_Unit.pkl                       
-...
+./trajectory_files/trajectories_set_alg1/trajectory_set_2_Unit.pkl                       
 ```
 Second, run the following code.
 

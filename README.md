@@ -1,8 +1,7 @@
-# Mamba-DAC
+# Q-Mamba
 
-Code of paper: Meta-Black-Box-Optimization through Offline Q-function Learning with Mamba Architecture.
+Code of paper: Meta-Black-Box-Optimization through Offline Q-function Learning.
 
-[[Paper]]() [[Project]]() 
 
 ![Mamba-DAC Architecture](./src/qmamba.png)
 

@@ -60,4 +60,10 @@ CUDA_VISIBLE_DEVICES=0 python run.py --test --algorithm_id 0 --load_path [MODEL_
 
 ```
 
+### Log
+Run the following code:
+```bash
 
+tensorboard --logdir=./log/
+
+```

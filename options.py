@@ -42,9 +42,12 @@ def get_options(args=None):
     
     # logging options
     parser.add_argument("--log_path", type=str, default="./log/")
+    parser.add_argument("--log_name", type=str, default=None)
     
     opts = parser.parse_args(args)
     
     opts.time_stamp = time.strftime("%Y%m%dT%H%M%S")
-
+    if opts.log_name is None:
+        opts.log_name = opts.time_stamp
+        
     return opts

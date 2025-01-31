@@ -21,6 +21,13 @@ Third, install the other necessary libraries.
 pip install -r requirements.txt
 ```
 
+Other requirements:
+- Linux
+- NVIDIA GPU
+- PyTorch 1.12+
+- CUDA 11.6+
+
+
 ### Train
 To quickly start training, 
 firstly, download the training trajectories from [here](https://github.com/GMC-DRL/Q-Mamba/tree/main). The directory could be set like this basic structure:

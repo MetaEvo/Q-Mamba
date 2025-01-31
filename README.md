@@ -57,7 +57,7 @@ CUDA_VISIBLE_DEVICES=0 python run.py --train --trajectory_file_path './trajector
 ```
 with different ``action_bins'' = 16, 32, 64, 128, 256, or 512 and ``actions_dim'' = 5, 6, 7, 8, 9 or 10 accordingly.
 
-For the E&E data ratio experiment, modified the ``rate'' parameter in line 37 to the value in (0, 0.25, 0.5, 0.75, 1) then run the training command:
+For the E&E data ratio experiment, modified the ``rate'' parameter in line 37 to the value in (0, 0.25, 0.5, 0.75, 1) and assign the data path in line 58. line 60, then run the training command:
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 python EE_data_ratio.py
@@ -82,7 +82,7 @@ CUDA_VISIBLE_DEVICES=0 python run.py --test --algorithm_id 0 --load_path [MODEL_
 
 ```
 
-To run the Neuroevolution experiemnt (Section 5.2, Figure 2), assign the ``model_path'' variable the path of the model to be tested in _neuralevolution.py_, then run the command:
+To run the Neuroevolution experiemnt (Section 5.2, Figure 2), assign the ``model_path'' variable the path of the model to be tested in _neuralevolution.py_ line 150, then run the command:
 ```bash
 # test Neuroevolution 
 CUDA_VISIBLE_DEVICES=0 python neuralevolution.py

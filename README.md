@@ -26,11 +26,6 @@ CUDA_VISIBLE_DEVICES=0 python run.py --train --trajectory_file_path './trajector
 # train q_mamba without conservative_reg_loss
 CUDA_VISIBLE_DEVICES=0 python run.py --train --trajectory_file_path './trajectory_files/trajectories_set_alg0/trajectory_set_0_Unit.pkl' 
 
-# train online q_mamba with conservative_reg_loss
-CUDA_VISIBLE_DEVICES=0 python run.py --train_online --trajectory_file_path './trajectory_files/trajectories_set_alg0/trajectory_set_0_Unit.pkl' --has_conservative_reg_loss 
-
-# train online q_mamba without conservative_reg_loss
-CUDA_VISIBLE_DEVICES=0 python run.py --train_online --trajectory_file_path './trajectory_files/trajectories_set_alg0/trajectory_set_0_Unit.pkl' 
 ```
 
 

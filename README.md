@@ -42,8 +42,7 @@ CUDA_VISIBLE_DEVICES=0 python run.py --train --trajectory_file_path './trajector
 ```
 
 
-For more detailed configuration options, please refer to the argparse help.
-You can use '''--lamda''', 
+For more detailed configuration options, please refer to the argparse help. 
 
 ```bash
 

@@ -26,6 +26,8 @@ To quickly start training,
 firstly, download the training trajectories from [here](https://github.com/GMC-DRL/Q-Mamba/tree/main). The directory could be set like this basic structure:
 ```bash
 ├── /trajectory_files/
+│  ├── trajectory_set_0_Rand.pkl
+│  ├── trajectory_set_0_CfgX.pkl  
 │  ├── trajectory_set_0_Unit.pkl   
 │  ├── trajectory_set_1_Unit.pkl   
 │  ├── trajectory_set_2_Unit.pkl                     

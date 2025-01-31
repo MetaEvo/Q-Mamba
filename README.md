@@ -57,7 +57,7 @@ For the experiment on action bins (Appendix E.1), run the following command:
 CUDA_VISIBLE_DEVICES=0 python run.py --train --trajectory_file_path './trajectory_files/trajectory_set_0_Unit.pkl' --has_conservative_reg_loss --action_bins 16 --actions_dim 5
 
 ```
-with different ``action_bins'' = 16, 32, 64, 128, 256, or 512 and ``actions_dim'' = 5, 6, 7, 8, 9 or 10 accordingly.
+with different `action_bins` = 16, 32, 64, 128, 256, or 512 and `actions_dim` = 5, 6, 7, 8, 9 or 10 accordingly.
 
 For the E&E data ratio experiment, modified the ``rate'' parameter in line 37 to the value in (0, 0.25, 0.5, 0.75, 1) and assign the data path in line 58. line 60, then run the training command:
 

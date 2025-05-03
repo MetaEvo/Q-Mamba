@@ -1,6 +1,6 @@
 # Q-Mamba
 
-Code of paper: Meta-Black-Box-Optimization through Offline Q-function Learning.
+### Code of our ICML 2025 paper: Meta-Black-Box-Optimization through Offline Q-function Learning.
 
 
 ![Mamba-DAC Architecture](./src/qmamba.png)
@@ -68,3 +68,16 @@ python run.py --test --algorithm_id 0 --load_path ./model/qmamba.pth
 
 ```
 The reward results are stored in ``./log/test/q_mamba/YYMMDDTHHmmSS/test_rewards.pkl`` where YYMMDDTHHmmSS is the time stamp of the test. 
+
+### If you find this repository useful, please cite it in your publications or projects as follows.
+
+```latex
+@inproceedings{
+qmamba,
+title={Meta-Black-Box-Optimization through Offline Q-function Learning},
+author={Zeyuan Ma, Zhiguang Cao, Zhou Jiang, Hongshu Guo, Yue-Jiao Gong},
+booktitle={Forty-second International Conference on Machine Learning},
+year={2025},
+}
+```
+
